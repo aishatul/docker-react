@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install: 
+  - docker build -t akkatiyar/docker-react -f Dockerfile.dev .
+
+script: 
+  - docker run akkatiyar/docker-react npm run test -- --covergae 
